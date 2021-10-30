@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+#banner{
+    min-height: 450px;
+    /* background: linear-gradient(
+        0deg,#000050,#000073 75%,#000073); */
+    padding: 4rem 0 0 0;
+}
+.banner__heading{
+    text-align: left;
+    color: #000050;
+    font-size: 4rem;
+    font-family: Roboto,Arial,Helvetica,sans-serif;
+    font-weight: 500;
+}
+.banner__service{
+    color: #000050;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+}
+.fa-4x{
+    margin: 0.5rem 0;
+}
+.banner__service_row{
+    margin: 1rem 0;
+}
+.banner__col{
+    height: 100%;
+}
+.container, .banner__row{
+    height: 100% !important;
+}
