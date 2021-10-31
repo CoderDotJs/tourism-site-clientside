@@ -50,7 +50,7 @@ const Services = () => {
                         service?.map((simple)=>{
                             return(
                              <ServiceCard  
-                             key={simple.id}
+                             key={simple._id}
                              prop={simple}
                               >
                               </ServiceCard>
