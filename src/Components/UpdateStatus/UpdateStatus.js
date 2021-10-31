@@ -46,34 +46,33 @@ const UpdateStatus = () => {
 
 
     return (
-        <div className="my-5 container mx-auto row row-cols-1 row-cols-md-3 row-cols-lg-3 row-cols-sm-1">
-            <div key={updatedOrders?._id}
-                            style={{"textDecoration": "none"}}  
-                            className="text-left col d-flex flex-column justify-content-between align-items-start py-5"
-                            >
-                            <div>
-                                <div className="service__icon_container">
-                                {/* <i className={`${img} fa-3x services__icon`}></i> */}
-                                <img src={updatedOrders?.img} alt="" className="img-fluid service__img"/>
+        <div className="my-5">
+            <h1 className="text-center services__heading">Update The Status of travel to <span className="underline-highlight ">{updatedOrders?.service_name}</span></h1>
+        
+            <div className="my-5 container mx-auto row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-sm-1">
+                <div key={updatedOrders?._id} style={{"textDecoration": "none"}} className="text-left col d-flex flex-column justify-content-between align-items-start py-5">
+                                <div>
+                                    <div className="service__icon_container">
+                                    {/* <i className={`${img} fa-3x services__icon`}></i> */}
+                                    <img src={updatedOrders?.img} alt="" className="img-fluid service__img"/>
+                                    </div>
+                                    <h4 className="my-3">{updatedOrders?.service_name} <span className="badge bg-warning">{updatedOrders?.status}</span></h4>
+                                    <p>{updatedOrders?.subtitle}</p>
+                                    <h3><b>${updatedOrders?.price}</b></h3>
+                                    <p>Ordered by: {updatedOrders?.email}</p>
+
+
+                                    <form onSubmit={handleSubmit(onSubmit)}>
+                                        <span className="fw-bold">Mark Order As:</span> <select {...register("status")}>
+                                            <option value="Pending" defaultValue>Pending</option>
+                                            <option value="Processing">Processing</option>
+                                            <option value="Completed">Completed</option>
+                                        </select><br /><br />
+                                        <input type="submit" className="btn btn-secondary"/>
+                                    </form>
                                 </div>
-                                <h4 className="my-3">{updatedOrders?.service_name} <span className="badge bg-warning">{updatedOrders?.status}</span></h4>
-                                <p>{updatedOrders?.subtitle}</p>
-                                <h3><b>${updatedOrders?.price}</b></h3>
-                                <p>Ordered by: {updatedOrders?.email}</p>
-                                
-                                
-                                <form onSubmit={handleSubmit(onSubmit)}>
-                                <span className="fw-bold">Mark Order As:</span> <select {...register("status")}>
-                                    <option value="Pending" defaultValue>Pending</option>
-                                    <option value="Processing">Processing</option>
-                                    <option value="Completed">Completed</option>
-                                </select><br /><br />
-                    <input type="submit" className="btn btn-secondary"/>
-            </form>
-                            </div>
-                            </div>
-            
-                                
+                </div>
+            </div>
         </div>
     );
 };

@@ -126,7 +126,7 @@ body {
 
 @media(max-width: 350px) {
     .wrapper {
-        height: 570px
+        height: auto;
     }
 
     .wrapper .contact-form {

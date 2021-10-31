@@ -53,11 +53,11 @@ const MyOrders = () => {
     return (
         <div>
             <div id="services" className="my-5">
-            <h1 className="text-center services__heading">You Have <span className="underline-highlight ">{filteredOrders.length}</span> orders to Manage</h1>
+            <h1 className="text-center services__heading">You Have Booked <span className="underline-highlight ">{filteredOrders.length}</span> Places To Travel</h1>
 
             <p className="text-center my-3" style={{"color": "gray"}}>You can cancel this orders before it becomes processing.</p>
 
-            <div className="container mx-auto row row-cols-1 row-cols-md-3 row-cols-lg-3 row-cols-sm-1">
+            <div className="container mx-auto row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-sm-1">
                 
 
 

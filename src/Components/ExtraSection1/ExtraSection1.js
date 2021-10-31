@@ -14,7 +14,7 @@ const ExtraSection1 = () => {
 
             {/* column  */}
 
-            <div className="row row-cols-1 row-cols-md-3 g-4 my-5">
+            <div className="row row-cols-1 row-cols-md-2 g-4 my-5">
                 <div className="col">
                     <div className="card h-100  d-flex flex-column justify-content-around align-items-center">
                         <h3 className="card-title my-3">Choose</h3>

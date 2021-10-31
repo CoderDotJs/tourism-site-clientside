@@ -2,15 +2,15 @@ import React, { useEffect,  useState } from 'react';
 import { useHistory, useParams } from 'react-router';
 import { useForm } from "react-hook-form";
 import useAuth from '../../Hooks/useAuth';
-import './PlaceOrder.css'
+import './PlaceOrder.css';
 
 const PlaceOreder = () => {
 
     const {service_name} = useParams();
-    const history = useHistory()
+    const history = useHistory();
     const [service, setService] = useState({})
     const {error, setError, user, status} = useAuth();
-    const { register, handleSubmit } = useForm()
+    const { register, handleSubmit } = useForm();
     
 
     // get the data by service name 
@@ -18,7 +18,9 @@ const PlaceOreder = () => {
     useEffect(()=>{
         fetch(`https://boiling-sierra-33157.herokuapp.com/services/place-order/${service_name}`)
         .then(res => res.json())
-        .then(data => setService(data))
+        .then(data => {
+          setService(data)
+        })
     },[service_name]);
 
         // on submit function to place order on submit the order 
@@ -56,20 +58,20 @@ const PlaceOreder = () => {
 
     return (
         <div className="container mx-auto my-5">
-            <h1 className="text-center services__heading my-5"><span className="underline-highlight">Place</span> Order</h1>
+            <h1 className="text-center services__heading my-5"><span className="underline-highlight">Book</span> Now</h1>
             
               {/* short desc for the service / pacage to buy  */}
 
 
             <div className="row">
                 <div className="col-lg-6 col-md-6 col-sm-12 h-100">
-                    <div key={service?._id}>
+                      <div key={service?._id}>
                         <h1><b>Place:</b> <i>{service?.service_name}</i></h1>
                         <p><b>Duration:</b> <i>{service?.subtitle}</i></p>
-                        <h2 className="my-3">${service?.price} </h2>
+                        <h2 className="my-3">Cost: ${service?.price} </h2>
                         <img src={service?.img} alt="" className="img-fluid w-75 d-block mx-auto my-2"/>
                         <p><b>Short Description:</b> {service?.desc}</p>
-                    </div>
+                      </div>
                 </div>
 
 
@@ -116,7 +118,7 @@ const PlaceOreder = () => {
                               </div>
                               <div className="row mt-3">
                                 <div className="col-12">
-                                  <input type="submit" value="Submit" className="btn btn-dark d-block mx-auto btn-submit"/>
+                                  <input type="submit" value="Book Now" className="btn btn-dark d-block mx-auto btn-submit"/>
                                 </div>
                               </div>
 

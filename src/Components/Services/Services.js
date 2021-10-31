@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { Spinner } from 'react-bootstrap';
 import ServiceCard from '../ServiceCard/ServiceCard';
-import './Services.css'
+import './Services.css';
+import useAuth from '../../Hooks/useAuth';
 
 const Services = () => {
 
@@ -8,12 +10,19 @@ const Services = () => {
 
     const [service, setService] = useState([])
 
+    const { isLoading, setIsLoading} = useAuth();
+
+    
         // fetching the data 
 
     useEffect(()=>{
+        setIsLoading(true)
         fetch('https://boiling-sierra-33157.herokuapp.com/services')
         .then(res => res.json())
-        .then(data => setService(data))
+        .then(data => {
+            setService(data)
+            setIsLoading(false)
+        })
     }, [])
 
     
@@ -26,24 +35,33 @@ const Services = () => {
 
             <p className="text-center my-3" style={{"color": "gray"}}>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
 
-            <div className="container mx-auto row row-cols-1 row-cols-md-3 row-cols-lg-3 row-cols-sm-1">
+            
                 
 
+            {
+                isLoading 
+                ? 
+                <div className="text-center my-5"><Spinner className="my-5" animation="border" variant="primary" className="text-center"/></div> 
+                : 
+                
+                <div className="container mx-auto row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-sm-1">
+                
+                    {
+                        service?.map((simple)=>{
+                            return(
+                             <ServiceCard  
+                             key={simple.id}
+                             prop={simple}
+                              >
+                              </ServiceCard>
+                            )
+                         })
+                    }
+                </div>
 
-                    {/* dynamic data show on service  */}
-                {
-                service?.map((simple)=>{
-                   return(
-                    <ServiceCard  
-                    key={simple.id}
-                    prop={simple}
-                     >
- 
-                     </ServiceCard>
-                   )
-                })
-                }
-            </div>
+            }
+                    
+            
 
         </div>
     );
