@@ -9,11 +9,11 @@ const PlaceOreder = () => {
     const {service_name} = useParams();
     const history = useHistory()
     const [service, setService] = useState({})
-    const {error, setError, user, status, setStatus} = useAuth();
+    const {error, setError, user, status} = useAuth();
     const { register, handleSubmit } = useForm()
     
 
-    
+    // get the data by service name 
 
     useEffect(()=>{
         fetch(`https://boiling-sierra-33157.herokuapp.com/services/place-order/${service_name}`)
@@ -21,20 +21,7 @@ const PlaceOreder = () => {
         .then(data => setService(data))
     },[service_name]);
 
-
-    
-    // const filterdService = service.filter(ser=>{
-    //         return ser._id.toString() === service_name.toString()
-    //     })
-    
-    //     console.log(filterdService)
-
-    //     const orderedData = filterdService[0]
-
-    //     console.log(orderedData)
-
-    //https://boiling-sierra-33157.herokuapp.com
-    //https://boiling-sierra-33157.herokuapp.com
+        // on submit function to place order on submit the order 
 
         const onSubmit = async (data, e) => {
             service.email = data.email;
@@ -71,6 +58,9 @@ const PlaceOreder = () => {
         <div className="container mx-auto my-5">
             <h1 className="text-center services__heading my-5"><span className="underline-highlight">Place</span> Order</h1>
             
+              {/* short desc for the service / pacage to buy  */}
+
+
             <div className="row">
                 <div className="col-lg-6 col-md-6 col-sm-12 h-100">
                     <div key={service?._id}>
@@ -81,6 +71,10 @@ const PlaceOreder = () => {
                         <p><b>Short Description:</b> {service?.desc}</p>
                     </div>
                 </div>
+
+
+                  {/* place order form  */}
+
                 <div className="col-lg-6 col-md-6 col-sm-12 h-100 d-flex justify-content-center align-items-center">
                     <form onSubmit={handleSubmit(onSubmit)}>
                     <section className="order-form my-4 mx-4">

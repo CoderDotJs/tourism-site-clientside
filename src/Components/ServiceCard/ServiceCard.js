@@ -1,5 +1,5 @@
-import Button from '@restart/ui/esm/Button';
-import React, { useEffect } from 'react';
+import {Button} from 'react-bootstrap';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './ServiceCard.css'
 
@@ -10,7 +10,7 @@ const ServiceCard = (props) => {
 
         // get the data using props 
 
-    const {_id, service_name, img, desc, subtitle, price} = props.prop;
+    const {_id, service_name, img, subtitle, price} = props.prop;
 
     return (
 

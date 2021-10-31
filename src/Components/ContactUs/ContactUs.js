@@ -1,11 +1,24 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link, useHistory } from 'react-router-dom';
 
 const ContactUs = () => {
 
+    // use history 
+
+    const history = useHistory();
+
+    // handle submit button for contact us 
+
+    const handleSubmit = () =>{
+        alert('Your Message has been sent')
+        history.push('/home')
+    }
     
 
     return (
+
+                    // contact us form 
+
         <div>
             <div className="wrapper rounded d-flex align-items-stretch">
     <div className="bg-yellow">
@@ -23,7 +36,7 @@ const ContactUs = () => {
             </div>
             <div className="d-flex align-items-center flex-wrap justify-content-between pt-lg-5 mt-lg-4 mt-5">
                 <Link to="/home" className="btn btn-default"> Cancel </Link>
-                <div className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"> Submit </div>
+                <button className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal" onClick={handleSubmit}> Submit </button>
             </div>
         </form>
     </div>

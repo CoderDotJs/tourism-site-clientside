@@ -30,9 +30,7 @@ const ExtraSection3 = () => {
                         <Col lg={6} md={6} sm={12}>
                         <div className="card border-0 shadow shoadow-md style__third" style={{"width": "18rem"}}>
                             <img src="https://pages.trip.com/cars/image/totrip/033d126a-d414-4842-9d10-b33bac5ef108.png" className="card-img-top" alt="..."/>
-                            {/* <div className="card-body">
-                                <p className="text-dark fw-bold">Find Cars When You Travel Easilym Any where in the world</p>
-                            </div> */}
+                           
                         </div>
                         </Col>
 
@@ -42,9 +40,7 @@ const ExtraSection3 = () => {
                         <Col lg={6} md={6} sm={12}>
                         <div className="card border-0 shadow shoadow-md style__third" style={{"width": "18rem"}}>
                             <img src="https://pages.trip.com/cars/image/totrip/01b5ac59-a201-4629-a757-d1f23406dd67.png" className="card-img-top" alt="..."/>
-                            {/* <div className="card-body">
-                                <p className="text-dark fw-bold">Why Hospital Quality Matters: 9 Things to Know</p>
-                            </div> */}
+                            
                         </div>
                         </Col>
 
@@ -53,9 +49,7 @@ const ExtraSection3 = () => {
                         <Col lg={12} md={12} sm={12}>
                         <div className="card border-0 shadow shoadow-md style__third">
                             <img src="https://www.tourindiawithdriver.com/UPLOAD/SLIDESHOW/6-Private-Car-for-tours-India.jpg" alt="..."/>
-                            {/* <div className="card-body">
-                                <p className="text-dark fw-bold">Why Hospital Quality Matters: 9 Things to Know</p>
-                            </div> */}
+                            
                         </div>
                         </Col>
                     </Row>

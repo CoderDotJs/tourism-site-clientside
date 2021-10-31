@@ -4,7 +4,7 @@ import Card from '../Card/Card';
 const Hotels = () => {
 
 
-    // using state for fakedoctor data 
+    // using state for  data 
 
     const [service, setService] = useState([])
 
@@ -24,7 +24,7 @@ const Hotels = () => {
 
         <div>
             <h1 className="text-center fw-bold my-5 services__heading">Find A Perfect <span className="underline-highlight">Place</span></h1>
-        <div className="container mx-auto row row-cols-1 row-cols-md-2 g-4 my-5">
+            <div className="container mx-auto row row-cols-1 row-cols-md-3 row-cols-lg-3 row-cols-sm-1">
 
             
             {/* service data will be added dynamically  */}

@@ -51,7 +51,7 @@ const Footer = () => {
             <img src="https://www.tripit.com/web/wp-content/uploads/sites/1/2018/12/logo-tripit.svg" alt="" width="70%"/>
           </h6>
           <p>
-          Your future patients are ready to connect. Make sure your profile stands out. Learn more about how to claim your free Healthgrades profile and our available upgrades
+          Your travel management are ready to connect. Make sure your profile stands out. Learn more about how to claim your free TravelGo profile and our available upgrades
           </p>
         </div>
         {/*   Grid column  */}
@@ -104,7 +104,7 @@ const Footer = () => {
           <p><i className="fas fa-home me-3"></i> New York, NY 10012, US</p>
           <p>
             <i className="fas fa-envelope me-3"></i>
-            info@example.com
+            info@travelgo.com
           </p>
           <p><i className="fas fa-phone me-3"></i> + 01 234 567 88</p>
           <p><i className="fas fa-print me-3"></i> + 01 234 567 89</p>
@@ -119,7 +119,7 @@ const Footer = () => {
   {/* Copyright */}
   <div className="text-center p-4" style={{ "backgroundColor": "rgba(0, 0, 0, 0.05)"}}>
     © 2021 Copyright: 
-    <Link to="/" className="text-reset fw-bold"> Healthgrades</Link>
+    <Link to="/" className="text-reset fw-bold"> TravelGO</Link>
   </div>
   {/*  Copyright  */}
 </footer>

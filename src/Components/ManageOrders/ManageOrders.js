@@ -1,13 +1,15 @@
 import React, {useState, useEffect} from 'react';
 import { Button } from 'react-bootstrap';
-import { useForm } from 'react-hook-form';
-import { Link, useHistory } from 'react-router-dom';
+import { Link} from 'react-router-dom';
 
 const ManageOrders = () => {
 
+    // use statwe for orders 
+
     const [orders, setOrders] = useState([])
-    const history = useHistory()
     
+
+    // get the data 
     
 
     useEffect(()=>{
@@ -16,14 +18,14 @@ const ManageOrders = () => {
         .then(data => setOrders(data));
     }, []);
 
-    // const filteredOrders = orders.filter((order)=> order.email.toString() === email.toString())
 
-    // console.log(filteredOrders)
+    // handle delete for manage the data 
+    
 
     const handleDelete = (id, status) =>{
         const procced = window.confirm("Do you want to Cancel this order?")
 
-        if(procced && status.toString() === 'Pending'){
+        if(procced && status.toString() !== 'Completed'){
             const url = `https://boiling-sierra-33157.herokuapp.com/cancel-order/${id}`
             fetch(url, {
                 method: 'DELETE'
@@ -39,21 +41,6 @@ const ManageOrders = () => {
     }
 
 
-    // const url = `https://boiling-sierra-33157.herokuapp.com/orders/${getId}`;
-
-
-    // useEffect(()=>{
-    //     fetch(url)
-    //     .then(res => res.json())
-    //     .then(data => setUpdatedOrder(data))
-    // }, [])
-
-    // console.log(updatedOrder)
-
-    
-
-
-    
 
     return (
         <div>
@@ -64,6 +51,8 @@ const ManageOrders = () => {
 
             <div className="container mx-auto row row-cols-1 row-cols-md-3 row-cols-lg-3 row-cols-sm-1">
                 
+
+                {/* all orders to manage them added dynamically  */}
                 
                 {
                     orders.map(order=>{
@@ -74,7 +63,6 @@ const ManageOrders = () => {
                             >
                             <div>
                                 <div className="service__icon_container">
-                                {/* <i className={`${img} fa-3x services__icon`}></i> */}
                                 <img src={order?.img} alt="" className="img-fluid service__img"/>
                                 </div>
                                 <h4 className="my-3">{order?.service_name} <span className="badge bg-warning">{order?.status}</span></h4>

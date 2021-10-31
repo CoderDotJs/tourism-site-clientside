@@ -36,36 +36,35 @@ function App() {
           <Route exact path="/home"> {/*for home direcotry*/ }
             <Home></Home>
           </Route>
-          <Route exact path="/hotels"> {/*for doctor direcotry*/ }
+          <Route exact path="/services"> {/*for services direcotry*/ }
             <Hotels></Hotels>
           </Route>
-          <Route exact path="/cars"> {/*for find a hospital direcotry*/ }
+          <Route exact path="/cars"> {/*for cars direcotry*/ }
             <Cars></Cars>
           </Route>
-          <PrivateRoute exact path="/services/place-order/:service_name"> {/*for service view direcotry*/ }
-              {/* <ServiceDetail></ServiceDetail> */}
+          <PrivateRoute exact path="/services/place-order/:service_name"> {/*for place order direcotry*/ }
               <PlaceOreder></PlaceOreder>
           </PrivateRoute>
-          <PrivateRoute exact path="/contact-us"> {/*for login direcotry*/ }
+          <Route exact path="/contact-us"> {/*for contact us direcotry*/ }
             <ContactUs></ContactUs>
-          </PrivateRoute>
+          </Route>
           <Route exact path="/login"> {/*for login direcotry*/ }
             <Login></Login>
           </Route>
-          <PrivateRoute exact path="/my-orders">
+          <PrivateRoute exact path="/my-orders"> {/* fro manage my orders directory */}
             <MyOrders></MyOrders>
           </PrivateRoute>
-          <PrivateRoute exact path="/manage-orders">
+          <PrivateRoute exact path="/manage-orders"> {/* for manage orders directory */}
             <ManageOrders></ManageOrders>
           </PrivateRoute>
-          <PrivateRoute exact path="/update-status/:id">
+          <PrivateRoute exact path="/update-status/:id"> {/* for update the status of order */}
             <UpdateStatus></UpdateStatus>
           </PrivateRoute>
-          <PrivateRoute exact path="/add-new-services">
+          <PrivateRoute exact path="/add-new-services"> {/* for add new services / package */}
             <AddService></AddService>
           </PrivateRoute>
           <Route exact path="/signup"> {/*for signup direcotry*/ }
-            <Signup></Signup>
+            <Login></Login>
           </Route>
           <Route exact path="*"> {/*for 404 direcotry*/ }
             <NotFoundPage></NotFoundPage>

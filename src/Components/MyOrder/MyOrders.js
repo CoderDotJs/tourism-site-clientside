@@ -4,10 +4,15 @@ import useAuth from '../../Hooks/useAuth';
 
 const MyOrders = () => {
 
+
+    // all state for save data 
+
     const [orders, setOrders] = useState([]);
     const {user} = useAuth();
     const {email} = user;
 
+
+    // get the data 
 
     useEffect(()=>{
         fetch('https://boiling-sierra-33157.herokuapp.com/my-orders')
@@ -15,10 +20,14 @@ const MyOrders = () => {
         .then(data => setOrders(data));
     }, []);
 
+        // filter the data to show the my orders for loged in mail 
+
 
     const filteredOrders = orders.filter((order)=> order.email.toString() === email.toString())
 
     console.log(filteredOrders)
+
+    // handle delete btn for cancel the order 
 
     const handleDelete = (id, status) =>{
         const procced = window.confirm("Do you want to Cancel This order?")
@@ -52,7 +61,7 @@ const MyOrders = () => {
                 
 
 
-                    {/* dynamic data show on service  */}
+                    {/* dynamic data show on my orders  */}
 
                 {
                     filteredOrders.map((order)=>{

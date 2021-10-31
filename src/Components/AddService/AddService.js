@@ -5,6 +5,9 @@ import './AddService.css'
 
 const AddService = () => {
 
+
+    // some verriables
+
     const { register, handleSubmit } = useForm();
 
     const [service, setService] = useState({})
@@ -13,7 +16,7 @@ const AddService = () => {
     const history = useHistory()
 
 
-    
+    // function on onSubmit the form 
 
     const onSubmit = data => {
         console.log('data', data)
@@ -22,8 +25,9 @@ const AddService = () => {
         handleAddNewServices(data)
     }
 
+    // handle add new service 
+
     const handleAddNewServices = (data) =>{
-        
         
 
         fetch('https://boiling-sierra-33157.herokuapp.com/add-new-services', {
@@ -44,6 +48,8 @@ const AddService = () => {
         })
     }
 
+    // use effect for get the data 
+
     useEffect(()=>{
         fetch('https://boiling-sierra-33157.herokuapp.com/services')
         .then(res => res.json())
@@ -55,6 +61,9 @@ const AddService = () => {
 
 
     return (
+
+            // add new service form 
+
         <div className="container mx-auto my-5">
            
             <div className="wrapper rounded d-flex align-items-stretch">
