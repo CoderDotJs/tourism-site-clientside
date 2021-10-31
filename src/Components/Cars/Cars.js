@@ -32,7 +32,7 @@ const Cars = () => {
                 ?
                 <div className="text-center my-5"><Spinner className="my-5" animation="border" variant="primary" className="text-center"/></div> 
                 :
-                <div className="row row-cols-1 row-cols-md-2 g-4 container mx-auto my-5">
+                <div className="row row-cols-1 row-cols-md-3 g-4 container mx-auto my-5">
                     {
                         cars.map((car)=>{
                             return(
