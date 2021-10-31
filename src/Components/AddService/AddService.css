@@ -14,7 +14,7 @@ body {
 .wrapper {
     max-width: 850px;
     margin: 50px auto;
-    height: 600px;
+    height: auto;
     background-color: #FFF;
     overflow: hidden;
     box-shadow: 5px 25px 35px #3535356b
