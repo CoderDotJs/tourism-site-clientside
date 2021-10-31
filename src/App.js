@@ -3,7 +3,6 @@ import Header from './Components/Header/Header';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './Components/Home/Home';
 import Login from './Components/Login/Login';
-import Signup from './Components/Signup/Signup';
 import Footer from './Components/Footer/Footer';
 import AuthProvider from './Context/AuthProvider';
 import NotFoundPage from './Components/NotFoundPage/NotFoundPage';

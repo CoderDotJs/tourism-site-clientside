@@ -11,7 +11,6 @@ const useFirebase = () => {
     const [error, setError] = useState('')
     const [isLoading, setIsLoading] = useState(true)
     const [status, setStatus] = useState("Pending")
-    const [getStatus, setGetStatus] = useState('')
    
     const handleStatusChange = (e) =>{
         console.log(e.target.value)
